@@ -11,9 +11,9 @@
 
   <h2 align="center">Techx - Landing page website</h2>
 
-  Techx is a fully responsive landing page website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+EduTech is a fully responsive landing page website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
-  <a href="https://codewithsadee.github.io/techx/"><strong>➥ Live Demo</strong></a>
+  <a href="https://edutechinsights.vercel.app"><strong>➥ Live Demo</strong></a>
 
 </div>
 
