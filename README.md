@@ -9,7 +9,7 @@
   <br />
   <br />
 
-  <h2 align="center">Techx - Landing page website</h2>
+  <h2 align="center">EduTech - Landing page website</h2>
 
 EduTech is a fully responsive landing page website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
@@ -31,7 +31,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Run Locally
 
-To run **Techx** locally, run this command on your git bash:
+To run **EduTech** locally, run this command on your git bash:
 
 Linux and macOS:
 
