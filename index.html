@@ -111,13 +111,22 @@
               <b>EduTech Insights is your go-to platform for the latest trends, innovations, and insights at the intersection of education and technology.</b>
             </p>
 
+            <!--original form
             <form action="" class="hero-form">
               <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="Enter Your Email"
                 required class="input-field">
 
               <button type="submit" class="btn btn-primary">Start Free Trial</button>
             </form>
+            -->
 
+            <form class="hero-form" id="emailForm">
+            <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="Enter Your Email" required class="input-field">
+            <button type="submit" class="btn btn-primary">Start Free Trial</button>
+            </form>
+
+            <p id="response"></p>
+  
             <ul class="hero-list">
 
               <li class="hero-item">
@@ -1090,5 +1099,28 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+      <script>
+  document.getElementById("emailForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      var formData = new FormData(this);
+      var responseText = document.getElementById("response");
+
+      fetch("https://script.google.com/macros/s/AKfycbxZV75ViBFPHfINKGa8FKCeB1WbHN22VF5wHTXGEQD8wq2U4EUIoM3peVZ4JdoIe9dVJg/exec", {
+          method: "POST",
+          body: JSON.stringify(Object.fromEntries(formData)),
+          headers: { "Content-Type": "application/json" }
+      })
+      .then(response => response.json())
+      .then(data => {
+          responseText.innerHTML = data.message;
+      })
+      .catch(error => {
+          responseText.innerHTML = "Error saving email.";
+          console.error(error);
+      });
+  });
+</script>
+
 
 </html>
