@@ -180,7 +180,7 @@
   </div>
 
   <script>
-    document.getElementById('submissionForm').addEventListener('submit', function(event) {
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
 
       var form = event.target;
@@ -191,7 +191,7 @@
       document.getElementById('submissionDate').value = currentDate;
 
       // Submit the form data to the Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbwqEH-03nRdV1DDdRC3L-TK8Yjt8inGAwfem828zwIWV_7fSrarf8aKW10I-yATveSLQQ/exec', { // Replace with your actual script URL
+      fetch('https://script.google.com/macros/s/AKfycbxqwB3bTN1Rkd-APyg0-M1ArVEjBgQeZt1ex1AX2lk0bO5sChMc-HqaoqRU-0XBpU-NVg/exec', { // Replace with your actual script URL
         method: 'POST',
         body: new URLSearchParams(formData)
       })
