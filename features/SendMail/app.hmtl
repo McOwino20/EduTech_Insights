@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXpress Messenger</title>
+  <!--reCAPTCHA script-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body { 
+     font-family: Arial, sans-serif; 
+     padding: 20px;
+     background: url('https://raw.githubusercontent.com/McOwino20/portfolio/refs/heads/main/assets/images/McOwino.png') no-repeat center center fixed;
+           
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+    }
+    
+    
+    .container 
+    { max-width: 600px; 
+    margin: 0 auto;
+    
+   
+           
+    width: 80%;
+    height: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+            
+            
+            
+    background: url('https://raw.githubusercontent.com/McOwino20/portfolio/refs/heads/main/assets/images/McOwino.png') no-repeat center center fixed;
+           
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+      
+    }
+    
+    
+    
+ 
+        .submit-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+
+
+    label { 
+      display: block; 
+      margin-top: 10px; }
+    input, textarea { 
+      width: 100%; 
+      padding: 8px; 
+      margin-top: 5px; }
+    button { 
+      margin-top: 20px; 
+      padding: 10px; 
+      background-color: #28a745; 
+      color: white; 
+      border: none; 
+      cursor: pointer; }
+    .response { 
+      margin-top: 20px; 
+      padding: 10px; 
+      border-radius: 5px; }
+    .response.success { 
+      background-color: #d4edda; 
+      color: #155724; }
+    .response.error { 
+      background-color: #f8d7da; 
+      color: #721c24; }
+    h1{  
+      text-shadow: 3px 3px 0 #FF6347,    /* Red shadow */
+        -1px -1px 5px #000;   /* Black shadow */ }
+
+
+             input[readonly] {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+
+ 
+
+
+
+        .consent-box {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .consent-box input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Makes the checkbox slightly larger */
+            cursor: pointer;
+        }
+
+        .consent-box label {
+            font-size: 16px;
+            cursor: pointer; /* Allows clicking the label to check/uncheck the box */
+        }
+
+
+
+
+
+
+
+     
+            .note {
+            font-size: 12px;
+            color: black;/* #777-original*/
+            text-align: center;
+            margin-top: 20px;
+           
+        }
+        b{
+          color:black;
+        }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Express Messanger</h1>
+    <form id="submissionForm">
+      
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address here e.g mc-owino@gmail.com" required>
+
+
+              
+
+      <!-- Hidden Fields -->
+      <input type="hidden" id="formID" name="formID" value="FORM12345"> <!-- Example static form ID -->
+      <input type="hidden" id="submissionDate" name="submissionDate" value="currentDate"> <!-- Will be set with current date -->
+
+
+
+
+
+
+
+    
+            
+           
+           
+         
+      <button type="submit">Submit</button>
+
+      <div id="response" class="response" style="display: none;"></div>
+
+    </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('submissionForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      var form = event.target;
+      var formData = new FormData(form);
+      
+      // Set submission date as hidden field (current date and time)
+      var currentDate = new Date().toISOString();
+      document.getElementById('submissionDate').value = currentDate;
+
+      // Submit the form data to the Google Apps Script
+      fetch('https://script.google.com/macros/s/AKfycbwqEH-03nRdV1DDdRC3L-TK8Yjt8inGAwfem828zwIWV_7fSrarf8aKW10I-yATveSLQQ/exec', { // Replace with your actual script URL
+        method: 'POST',
+        body: new URLSearchParams(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        var responseDiv = document.getElementById('response');
+        responseDiv.style.display = 'block';
+
+        if (data.status === 'success') {
+          responseDiv.textContent = data.message;
+          responseDiv.className = 'response success';
+          form.reset(); // Clear the form upon successful submission
+        } else {
+          responseDiv.textContent = 'Error: ' + data.message;
+          responseDiv.className = 'response error';
+        }
+      })
+      .catch(error => {
+        var responseDiv = document.getElementById('response');
+        responseDiv.style.display = 'block';
+        responseDiv.textContent = 'Unexpected error: ' + error.message;
+        responseDiv.className = 'response error';
+      });
+    });
+  </script>
+
+
+</body>
+</html>
