@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--reCAPCHA-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+  <title>Get in Touch - Edutech Insights</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #eceff1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    /* Container styling with subtle animation */
+    .contact-container {
+      background: #fff;
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease both;
+      text-align: center;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Headings and messages */
+    .contact-container h2 {
+      font-size: 20px;
+      color: #0056b3;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .contact-container .contact-message {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    /* Form fields */
+    .contact-container .input-box {
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .contact-container input:focus,
+    .contact-container textarea:focus {
+      border-color: #0056b3;
+      box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+    }
+    
+    .contact-container textarea {
+      resize: none;
+      height: 140px;
+    }
+    
+    /* Button styling */
+    .contact-container button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(45deg, #0056b3, #003f80);
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    .contact-container button:hover {
+      background: linear-gradient(45deg, #003f80, #0056b3);
+      transform: translateY(-3px);
+    }
+    
+    /* Social icons */
+    .social-icons {
+      margin-top: 25px;
+    }
+    
+    .social-icons a {
+      text-decoration: none;
+      margin: 0 12px;
+      color: #0056b3;
+      font-size: 24px;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #003f80;
+      transform: scale(1.1);
+    }
+    
+    /* Branding */
+    .branding {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #999;
+    }
+    
+    .branding span {
+      color: #0056b3;
+      font-weight: 600;
+    }
+    p{
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2>Get in Touch with EduTech Insights</h2>
+    <p class="contact-message">
+     We value your ideas and input. Sharing your thoughts and questions helps us understand your needs better and provide you with personalized solutions. Please let us know how we can help you achieve the best results.
+    </p>
+    <form action="https://formspree.io/f/mgegvboj" method="post" class="contact-form" onsubmit="return confirmSubmission(event)">
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" placeholder="Your Email Address" required>
+      </div>
+      <div class="input-box">
+        <textarea name="message" placeholder="Share your thoughts here..." required></textarea>
+      </div>
+      
+      <!--reCAPTCHA field-->
+      <div class="g-recaptcha" data-sitekey="6LdIpUUqAAAAAG0EjNsQFYxFoSr3KlwKq69VAg0q"></div> <!-- replace with your recaptcha SITE key not secret key -->
+        <br>
+      <button type="submit">Send Your Message</button>
+      
+      
+    </form>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-envelope"></i></a>      
+    </div>
+    <div class="branding">
+      &copy; 2025 <span>Edutech Insights</span> | All Rights Reserved
+    </div>
+  </div>
+</body>
+
+<!--script for dialogue box on-submit-->
+  <script>
+  function confirmSubmission(event) {
+    // Display a confirmation dialog
+    const userConfirmed = confirm("Are you sure you want to submit the form?  If yes, you acknowledge that the information you provided is solely for contact purposes. And therefore you need to provide the correct contact details so that I can get back to you.");
+    
+    // If user clicks "OK", proceed with form submission
+    if (userConfirmed) {
+      return true; // This allows the form to be submitted
+    }
+    
+    // If user clicks "Cancel", prevent form submission
+    event.preventDefault();
+    return false;
+  }
+  </script>
+</html>
