@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Our Map - Edutech Insights</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #eceff1);
+      min-height: 100vh;
+    }
+    
+    /* Flex wrapper to center content on the screen */
+    .map-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh; /* Full viewport height */
+      padding: 20px;
+      background: linear-gradient(135deg, #eceff1, #ffffff);
+    }
+    
+    /* Header above the map */
+    .contact-item {
+      font-size: 1.75rem;
+      color: #0056b3;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive map container with a 16:9 aspect ratio */
+    .map-container {
+      position: relative;
+      width: 100%;
+      max-width: 700px;  /* Maximum width for larger screens */
+      overflow: hidden;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 * 100) */
+      border: 4px solid #0056b3;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+    }
+    
+    /* Hover effect to gently scale the map container */
+    .map-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Responsive iframe fills the container */
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 10px; /* Slightly smaller radius for a layered look */
+    }
+  </style>
+</head>
+<body>
+  <div class="map-wrapper">
+    <div class="contact-item">Explore Our Map</div>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63821.338041567644!2d36.81567264728138!3d-1.2729764570453734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16b02d007251%3A0xb8beb2dbf14a0af4!2sEastleigh%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1707639741253!5m2!1sen!2ske" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
