@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            background: #2575fc;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1a5bcc;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .terms input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Registration</h2>
+        <form action="https://chat.whatsapp.com/FaCrEGVbXEb8m2cK8eQfRw" method="POST">
+            
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first_name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last_name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="grade">Grade/Level of Study:</label>
+            <input type="text" id="grade" name="grade" required>
+
+              <!--
+            <label for="subject">Subjects You Need Help With:</label>
+            <input type="text" id="subject" name="subject" required>
+            
+
+            <label for="availability">Preferred Study Time:</label>
+            <input type="text" id="availability" name="availability" required>
+             -->
+            
+<label for="start-time">Preferred Start Time:</label>
+<input type="time" id="start-time" name="start-time" required>
+
+<label for="end-time">Preferred End Time:</label>
+<input type="time" id="end-time" name="end-time" required>
+
+
+
+
+
+            <label for="learning-style">Preferred Learning Mode:</label>
+            <select id="learning-style" name="learning_style" required>
+                <option value="virtual">Virtual</option>
+
+            </select>
+
+            <label for="payment-method">Payment Method Used:</label>
+            <select id="payment-method" name="payment_method" required>
+                <option value="paypal">M-Pesa</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+
+            <button type="submit" class="btn">Complete registration</button>
+        </form>
+    </div>
+
+</body>
+</html>
