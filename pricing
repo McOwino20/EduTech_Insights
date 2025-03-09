@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Insights - Pricing Plans</title>
+    <style>
+      /* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Pricing Container */
+.pricing-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 280px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+/* Call to Action Button */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <h1>EduTech Insights - Pricing Plans</h1>
+        <p>Select a plan that suits your needs.</p>
+
+        <div class="pricing-cards">
+            <!-- Starter Plan -->
+            <div class="pricing-card">
+                <h2>Starter</h2>
+                <p class="price">$49 / month</p>
+                <ul>
+                    <li>✔ 1 Website Development</li>
+                    <li>✔ Basic SEO</li>
+                    <li>✔ Standard Hosting</li>
+                    <li>✔ Email Support</li>
+                    <li>❌ API Integrations</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card">
+                <h2>Professional</h2>
+                <p class="price">$99 / month</p>
+                <ul>
+                    <li>✔ 3 Websites Development</li>
+                    <li>✔ Advanced SEO</li>
+                    <li>✔ Premium Hosting</li>
+                    <li>✔ Priority Email Support</li>
+                    <li>✔ API & Payment Integrations</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <h2>Enterprise</h2>
+                <p class="price">$199 / month</p>
+                <ul>
+                    <li>✔ Unlimited Websites</li>
+                    <li>✔ Full SEO Optimization</li>
+                    <li>✔ Dedicated Cloud Hosting</li>
+                    <li>✔ 24/7 VIP Support</li>
+                    <li>✔ Custom API & AI Integrations</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
