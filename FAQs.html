@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Insights - FAQs</title>
+    <style>
+      /* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* FAQ Container */
+.faq-container {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* FAQ Items */
+.faq {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-header:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.icon {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 15px;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.faq-content p {
+    padding: 15px 0;
+}
+
+/* Active State */
+.faq.active .faq-content {
+    max-height: 100px;
+    opacity: 1;
+}
+
+.faq.active .icon {
+    transform: rotate(45deg);
+}
+
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>📌 Frequently Asked Questions</h1>
+        <p>Find answers to common questions about our services, pricing, security, and more.</p>
+
+        <div class="faq">
+            <button class="faq-header">📌 What is EduTech Insights? <span class="icon">+</span></button>
+            <div class="faq-content">
+                <p>EduTech Insights is a tech solutions platform offering web development, SEO, payment integration, content writing, and more.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-header">📌 Who can benefit from your services? <span class="icon">+</span></button>
+            <div class="faq-content">
+                <p>Our services are ideal for businesses, startups, students, and organizations looking to enhance their online presence.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-header">📌 What web development services do you offer? <span class="icon">+</span></button>
+            <div class="faq-content">
+                <p>We build responsive websites, including business sites, e-commerce stores, educational platforms, and personal portfolios.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-header">📌 How do you ensure website security? <span class="icon">+</span></button>
+            <div class="faq-content">
+                <p>We use SSL encryption, authentication (Auth0), and reCAPTCHA to ensure high security.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-header">📌 How can I contact EduTech Insights? <span class="icon">+</span></button>
+            <div class="faq-content">
+                <p>You can reach us via email at <a href="mailto:support@edutechinsights.com">support@edutechinsights.com</a> or through our live chat on the website.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqHeaders = document.querySelectorAll(".faq-header");
+
+    faqHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            const faq = header.parentElement;
+            faq.classList.toggle("active");
+
+            // Close other open FAQs
+            document.querySelectorAll(".faq").forEach(item => {
+                if (item !== faq) {
+                    item.classList.remove("active");
+                }
+            });
+        });
+    });
+});
+
+</script>
+</html>
