@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Insights - Blog Post</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blog-post-container">
+        <a href="blog.html" class="back-btn">⬅ Back to Blog</a>
+        <h1 id="post-title">Blog Title</h1>
+        <img id="post-image" src="" alt="Blog Image">
+        <p id="post-content">Blog content goes here...</p>
+    </div>
+
+    <script>
+        // Retrieve the post identifier from the URL
+        const params = new URLSearchParams(window.location.search);
+        const postKey = params.get("post");
+
+        // Sample blog posts data
+        const blogPosts = {
+            "ai-education": {
+                title: "How AI is Transforming Education",
+                image: "/blog/1.png",
+                content: "AI is revolutionizing education by personalizing learning experiences, automating administrative tasks, and improving accessibility..."
+            },
+            "web-trends-2025": {
+                title: "Top 10 Web Development Trends in 2025",
+                image: "/blog/1.png",
+                content: "In 2025, web development will be shaped by AI-driven coding, no-code platforms, progressive web apps, and more..."
+            },
+            "cybersecurity-tips": {
+                title: "Cybersecurity Tips for Online Learning",
+                image: "/blog/1.png",
+                content: "Online learning brings convenience but also risks. Here are essential cybersecurity tips to keep your data safe..."
+            },
+            "remote-work-learning": {
+                title: "The Future of Remote Work & Learning",
+                image: "/blog/1.png",
+                content: "Remote work and learning have become the new norm. Here's how individuals and organizations can adapt..."
+            }
+        };
+
+        // Populate the blog post page with the selected post data
+        if (blogPosts[postKey]) {
+            document.getElementById("post-title").innerText = blogPosts[postKey].title;
+            document.getElementById("post-image").src = blogPosts[postKey].image;
+            document.getElementById("post-content").innerText = blogPosts[postKey].content;
+        } else {
+            document.getElementById("post-title").innerText = "Post Not Found";
+            document.getElementById("post-content").innerText = "The blog post you are looking for does not exist.";
+        }
+    </script>
+</body>
+</html>
