@@ -27,13 +27,13 @@ To run **EduTech** locally, run this command on your git bash:
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/McOwino20/EduTech Insights.git
+sudo git clone https://github.com/mcowino20/EduTech_Insights.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/mcowino20/EduTech Insights.git
+git clone https://github.com/mcowino20/EduTech_Insights.git
 ```
 
 ### Contact
