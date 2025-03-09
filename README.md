@@ -36,18 +36,18 @@ To run **EduTech** locally, run this command on your git bash:
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/techx.git
+sudo git clone https://github.com/McOwino20/EduTech Insights.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/techx.git
+git clone https://github.com/mcowino20/EduTech Insights.git
 ```
 
 ### Contact
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+If you want to contact with me you can reach me at [ExpressMessenger](https://mcowino20.github.io/EduTech_Insights/features/ExpressMessenger/app).
 
 ### License
 
