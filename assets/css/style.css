@@ -1246,6 +1246,35 @@ body {
    * SUPPORT KIT BUTTON =DEVELOPER KIT
    */
 
+         /* Style for the floating button */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensure it floats on top of content */
+        }
+
+        /* Style for the link inside the button */
+        #join-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #join-link:hover {
+            text-decoration: underline;
+        }
+
         /* Dismiss button inside the floating button */
         #dismiss-btn {
             margin-left: 10px;
@@ -1276,5 +1305,6 @@ body {
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
-    }
+            }
+          
 /*End of Supprt kit button*/
