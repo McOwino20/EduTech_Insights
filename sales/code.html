@@ -77,17 +77,17 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Response:", data);
-                if (data && data.url) {
-                    window.location.href = data.url; // Redirect to payment page
+                console.log("API Response:", data);
+                if (data.url) {
+                    window.location.href = data.url;
                 } else {
-                    alert("Payment initialization failed. Please check your API key and request format.");
-                    console.error("Error details:", data);
+                    alert("❌ Payment failed. Check API Key.");
+                    console.error("Error Details:", data);
                 }
             })
             .catch(error => {
-                console.error("Error:", error);
-                alert("Error processing payment. Please check your network and API key.");
+                console.error("Fetch Error:", error);
+                alert("🚨 Payment failed. Open console (F12) and check the error.");
             });
         }
     </script>
