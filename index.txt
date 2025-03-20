@@ -1,10 +1,10 @@
-Techx - Make Chat Easy
+EduTech Insights- Home of Endless Possibilities 
 
 
 
 #---------- HEADER ----------#
 
-Techx
+EduTech Insights
 
 Home
 Services
@@ -163,7 +163,7 @@ Contact Us Now
 
 #---------- FOOTER ----------#
 
-Techx
+EduTech Insights 
 
 Services
 
@@ -186,12 +186,12 @@ Contact Us
 Call Us:
 +(323) 750-1234
 Address:
-Vermont Ave, Los Angeles, CA 90044
+Eastleigh,Nairobi
 Mail Us:
-hello@Techx.com
+hello@Tech.com
 
 
-&copy; 2022 Techx. All rights reserved by codewithsadee
+&copy; 2022 Techx. All rights reserved by EduTech Insights
 
 Privacy Policy
 Security
