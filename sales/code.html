@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .price {
+            font-size: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #218838;
+        }
+        footer {
+            margin-top: 20px;
+            background: #222;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>💻 Source Code Store 🚀</h1>
+        <p>Get high-quality source code for your projects.</p>
+    </header>
+
+    <section class="products">
+        <div class="product">
+            <img src="https://source.unsplash.com/400x250/?technology,coding" alt="Chat App">
+            <h2>Chat App</h2>
+            <p>A real-time chat application.</p>
+            <p class="price">$10</p>
+            <button onclick="payNow('Chat App', 10)">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://source.unsplash.com/400x250/?weather,clouds" alt="Weather App">
+            <h2>Weather App</h2>
+            <p>A weather update web app.</p>
+            <p class="price">$8</p>
+            <button onclick="payNow('Weather App', 8)">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://source.unsplash.com/400x250/?tasks,notes" alt="To-Do List">
+            <h2>To-Do List</h2>
+            <p>A simple task management app.</p>
+            <p class="price">$5</p>
+            <button onclick="payNow('To-Do List', 5)">Buy Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Source Code Store | Secure Payments via IntaSend</p>
+    </footer>
+
+    <script>
+        function payNow(product, amount) {
+            let email = prompt("Enter your email:");
+
+            if (!email) {
+                alert("Email is required!");
+                return;
+            }
+
+            const publicKey = "ISPubKey_live_79fff6a0-2a9e-4e38-b442-d00c56a58789"; // Replace with your actual IntaSend Public Key
+            const redirectURL = "https://yourwebsite.com/download.html"; // Update with your actual redirect page
+
+            fetch("https://api.intasend.com/v1/checkout/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-IntaSend-Public-Key": publicKey
+                },
+                body: JSON.stringify({
+                    "amount": amount,
+                    "currency": "USD",
+                    "email": email,
+                    "callback_url": redirectURL,
+                    "hosted_payment": true,
+                    "comment": `Purchase of ${product}`
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Debugging: Check the response in the console
+                if (data.url) {
+                    window.location.href = data.url; // Redirect to payment page
+                } else {
+                    alert("Payment initialization failed. Please check your API key and request format.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Error processing payment. Please try again.");
+            });
+        }
+    </script>
+
+</body>
+</html>
