@@ -1240,3 +1240,41 @@ body {
   .app .btn-group { justify-content: flex-start; }
 
 }
+
+
+/**
+   * SUPPORT KIT BUTTON =DEVELOPER KIT
+   */
+
+        /* Dismiss button inside the floating button */
+        #dismiss-btn {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            background:  #ff6666;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        #dismiss-btn:hover {
+            color: #ff5c5c;
+        }
+
+        /* Sample body content to demonstrate floating effect */
+        .content {
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+    }
+/*End of Supprt kit button*/
