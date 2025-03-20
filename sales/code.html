@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Source Code Store | Secure Payments</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; }
+        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; margin: 0; padding: 0; }
         header { background: linear-gradient(90deg, #1e3c72, #2a5298); color: white; padding: 20px; }
         .products { display: flex; justify-content: center; flex-wrap: wrap; padding: 20px; }
         .product { background: white; margin: 15px; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s; }
@@ -54,14 +54,15 @@
                 return;
             }
 
-            const publicKey = "ISPubKey_live_79fff6a0-2a9e-4e38-b442-d00c56a58789"; // Replace with your actual IntaSend Public Key
-            const redirectURL = "https://yourwebsite.com/thank-you.html"; // Update with your actual page
+            const publicKey = "ISPubKey_live_79fff6a0-2a9e-4e38-b442-d00c56a58789"; // Replace with your actual key
+            const redirectURL = "https://yourwebsite.com/thank-you.html"; // Replace with your thank-you page
 
             console.log("Initializing payment for:", product, "Amount:", amount);
 
             fetch("https://api.intasend.com/v1/checkout/", {
                 method: "POST",
                 headers: {
+                    "Accept": "application/json",
                     "Content-Type": "application/json",
                     "X-IntaSend-Public-Key": publicKey
                 },
@@ -76,9 +77,8 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Response received:", data);
-                if (data.url) {
-                    console.log("Redirecting to payment:", data.url);
+                console.log("Response:", data);
+                if (data && data.url) {
                     window.location.href = data.url; // Redirect to payment page
                 } else {
                     alert("Payment initialization failed. Please check your API key and request format.");
@@ -86,8 +86,8 @@
                 }
             })
             .catch(error => {
-                console.error("Network error:", error);
-                alert("Error processing payment. Please try again.");
+                console.error("Error:", error);
+                alert("Error processing payment. Please check your network and API key.");
             });
         }
     </script>
