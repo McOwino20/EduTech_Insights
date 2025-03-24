@@ -1347,4 +1347,20 @@ body {
   font-size: 18px;
   color: black;
   }
+
+
+
+/* Inline Link Styling */
+.info-text a {
+    color: #007bff; /* Blue link */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.info-text a:hover {
+    color: #ff6600; /* Bright orange on hover */
+    text-decoration: underline;
+        }
+  
   /*End of info box on index code*/
