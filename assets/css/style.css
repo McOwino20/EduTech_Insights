@@ -1308,3 +1308,43 @@ body {
             }
           
 /*End of Supprt kit button*/
+
+/*Start of info box on index code*/
+@keyframes neon-glow {
+  0% { box-shadow: 0 0 5px #ffcc00; }
+  50% { box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff9900; }
+  100% { box-shadow: 0 0 5px #ffcc00; }
+}
+
+.info-box {
+  background: white;
+  color: black;
+  width: 100%; /* Full screen width */
+  padding: 15px 0;
+  border-radius: 0;
+  text-align: center;
+  border-top: 3px solid #ffcc00; /* Neon yellow border */
+  border-bottom: 3px solid #ffcc00; /* Neon yellow border */
+  animation: neon-glow 2s infinite alternate ease-in-out;
+}
+
+.info-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+
+.info-note i {
+  font-size: 22px;
+  color: #ff9900; /* Bright orange icon */
+  margin-right: 10px;
+}
+
+.info-text {
+  font-size: 18px;
+  color: black;
+  }
+  /*End of info box on index code*/
