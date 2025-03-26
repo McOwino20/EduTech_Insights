@@ -406,6 +406,17 @@
       <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </footer>
-
+<!--script to dismiss Email Us button-->
+  <script>
+    document.getElementById("dismiss-btn").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        let floatingBtn = document.getElementById("floating-button");
+        floatingBtn.style.opacity = "0";
+        setTimeout(() => {
+            floatingBtn.style.display = "none";
+        }, 300);
+    });
+      </script>  
+<!--End of script to dismiss Email Us button-->
 </body>
 </html>
