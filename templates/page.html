@@ -225,7 +225,51 @@
         }
 
         /* End of Style for the floating button=Emai Us */
-    
+
+       /*subscription button*/
+        .subscription-link {
+         display: inline-block;
+         background: linear-gradient(45deg,  #3498db,  #27ae60);
+         color: white;
+         font-size: 14px; /* Reduced font size */
+         font-weight: bold;
+         padding: 8px 15px; /* Smaller padding */
+         border-radius: 6px;
+         text-decoration: none;
+         transition: all 0.3s ease-in-out;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+         width: 220px; /* Reduced width */
+         text-align: center;
+         overflow: hidden;
+         position: relative;
+         }
+
+        .subscription-link:hover {
+         background: linear-gradient(45deg, #ff4b2b, #ff416c);
+         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+         transform: translateY(-2px);
+         }
+
+         #typing-text {
+         display: inline-block;
+         white-space: nowrap;
+         overflow: hidden;
+         border-right: 2px solid white;
+         padding-right: 5px;
+         width: 100%; /* Ensures the text stays inside */
+         text-align: center;
+         animation: typing 3s steps(30, end) infinite, blink 0.7s infinite;
+         }
+
+         @keyframes typing {
+         from { width: 0; }
+         to { width: 100%; }
+         }
+
+         @keyframes blink {
+         50% { border-color: transparent; }
+         }
+      /*End of subscription button style*/
     
   </style>
 </head>
@@ -425,7 +469,12 @@
   </section>
 
   <footer>
-    <a href="https://bulksms.talksasa.com/contacts/67c189bf939b2/subscribe-url">Daily Tech Updates Subscription </a>
+    <!--subscription button-->
+    <a href="https://bulksms.talksasa.com/contacts/67c189bf939b2/subscribe-url" class="subscription-link">
+    <span id="typing-text"></span>
+    </a>
+    <!--subscription button-->
+  
     <p>© 2025 EduTech Insights | All rights reserved</p>
     <div class="social-icons">
       <a href="https://www.facebook.com/share/1BtL8JHPTW/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -446,5 +495,30 @@
     });
       </script>  
 <!--End of script to dismiss Email Us button-->
+
+<!--Subcription button script -->
+<script>
+  const text = " Subscribe for Daily Tech Updates";
+let index = 0;
+let speed = 100; // Typing speed in ms
+
+function typeText() {
+    const typingElement = document.getElementById("typing-text");
+    if (index < text.length) {
+        typingElement.innerHTML = text.substring(0, index + 1);
+        index++;
+        setTimeout(typeText, speed);
+    } else {
+        setTimeout(() => {
+            typingElement.innerHTML = "";
+            index = 0;
+            typeText();
+        }, 2000); // Restart effect after 2 seconds
+    }
+}
+
+document.addEventListener("DOMContentLoaded", typeText);
+
+</script>
 </body>
 </html>
