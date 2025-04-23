@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Academic Research Services</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!--reCAPCHA-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
     body {line-height: 1.6; color: #333; background-color: #f8f9fc;}
@@ -214,12 +217,15 @@
 
   <section id="contact" class="contact-form">
     <h2><i class="fas fa-paper-plane"></i> Let’s Get Started</h2>
-    <form action="https://formspree.io/f/xgvwynnv" method="POST">
+    <form action="https://formspree.io/f/mgegvboj" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <input type="text" name="level" placeholder="Level of Study" required>
       <input type="text" name="area" placeholder="Research Area">
       <textarea name="message" placeholder="Message or Requirements"></textarea>
+      <!--reCAPTCHA field-->
+       <div class="g-recaptcha" data-sitekey="6LdIpUUqAAAAAG0EjNsQFYxFoSr3KlwKq69VAg0q"></div> <!-- replace with your recaptcha SITE key not secret key -->
+      <br>
       <button type="submit"><i class="fas fa-paper-plane"></i> Submit Request</button>
     </form>
   </section>
