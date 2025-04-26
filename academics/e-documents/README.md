@@ -10,7 +10,7 @@ Get instant access to exclusive study materials, legal documents, and expert res
 </div>
 
 
-<br />
+<br>
 
 
 ### Contact
@@ -19,4 +19,4 @@ If you want to contact with me you can reach me at [ExpressMessenger](https://mc
 
 ### Project Progress 
 
-This project is **Under Development** to bring learners,educator and professionals more enhanced experience.**Expect more Tech developments from McOwino**
+This project is **Under Development** to bring learners,educator and professionals more enhanced experience.**Expect more Tech developments from McOwino**.
