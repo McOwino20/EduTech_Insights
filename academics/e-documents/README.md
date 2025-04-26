@@ -9,18 +9,6 @@ Get instant access to exclusive study materials, legal documents, and expert res
 
 </div>
 
-<br />
-
-### Demo Screeshots
-
-![Techx Desktop Demo](./readme-images/desktop.png "Desktop Demo")
-
-
-
-### Contact
-
-If you want to contact with me you can reach me at [ExpressMessenger](https://mcowino20.github.io/EduTech_Insights/features/ExpressMessenger/app).
-
 
 <br />
 
