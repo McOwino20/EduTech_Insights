@@ -1,7 +1,6 @@
 <div align="center"
 
-  <h2 align="center">EduTech - Landing page website</h2><div align="center"
-
+  
   <h2 align="center">EduTech - Landing page website</h2>
 
 Get instant access to exclusive study materials, legal documents, and expert resources. Perfect for ambitious students, educators, and professionals.
